@@ -1,0 +1,865 @@
+<!doctype html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="color-scheme" content="light">
+
+<title>Cormarche コルマルシェ｜堺東の完全プライベート美容室</title>
+
+<meta name="description" content="堺東駅西口から徒歩5分。お一人様ずつの完全プライベートサロン。ショートカットに定評、20時まで受付。">
+
+<link rel="preconnect" href=https://fonts.googleapis.com>
+
+<link rel="preconnect" href=https://fonts.gstatic.com crossorigin>
+
+<link rel="stylesheet" href=https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap>
+
+<!--
+
+  制作サンプル: ホットペッパービューティー掲載情報(コルマルシェ / Cormarche)をもとに作成。
+
+  営業時間・料金・クーポンは変わることがあるため、公開前に最新の掲載情報で確認してください。
+
+-->
+
+<style>
+
+/* Layout concept: 店の目印「青い扉」を主役にした2カラムのヒーロー。以降は左に見出し・右に内容の非対称構成。 */
+
+:root {
+
+  --bg: #ffffff;
+
+  --surface: #ffffff;
+
+  --tint: #f5f8fc;
+
+  --ink: #0f1b33;
+
+  --muted: #5a677e;
+
+  --line: #e2e8f0;
+
+  --door: #2457b5;
+
+  --door-text: #1d4a9e;
+
+  --on-door: #ffffff;
+
+  --awning: #f3c43a;
+
+  --awning-alt: #ffffff;
+
+  --wall: #eef3fa;
+
+  --f-display: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+
+  --f-body: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+
+  --f-latin: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+
+}
+
+ 
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 88px; } /* 固定ヘッダーにセクション見出しが隠れないよう余白を確保 */
+
+body {
+
+  margin: 0;
+
+  background: var(--bg);
+
+  color: var(--ink);
+
+  font-family: var(--f-body);
+
+  font-size: 16px;
+
+  line-height: 1.9;
+
+}
+
+h1, h2, h3, p, ul, dl, dd { margin: 0; }
+
+ul { padding: 0; list-style: none; }
+
+a { color: inherit; }
+
+:focus-visible { outline: 3px solid var(--awning); outline-offset: 2px; }
+
+.wrap { max-width: 1080px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 32px); }
+
+ 
+
+/* header (画面上部に固定) */
+
+.head { position: sticky; top: 0; z-index: 10; background: rgba(255, 255, 255, .94); border-bottom: 1px solid var(--line); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+
+.head .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding-block: 14px; }
+
+.mark { text-decoration: none; display: flex; align-items: baseline; gap: .7em; }
+
+.mark b { font-family: var(--f-latin); font-style: italic; font-weight: 500; font-size: 1.9rem; letter-spacing: .02em; line-height: 1; }
+
+.mark small { font-size: .72rem; letter-spacing: .18em; color: var(--muted); }
+
+.nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; }
+
+.nav a { font-size: .88rem; text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+
+.nav a:hover { border-color: var(--awning); }
+
+.btn { display: inline-block; padding: 11px 22px; border-radius: 999px; background: var(--door); color: var(--on-door); text-decoration: none; font-weight: 700; letter-spacing: .04em; border: 2px solid var(--door); }
+
+.btn:hover { filter: brightness(1.12); }
+
+.btn.ghost { background: transparent; color: inherit; border-color: currentColor; }
+
+.nav .btn { font-size: .85rem; padding: 7px 18px; border-bottom: 2px solid var(--door); }
+
+ 
+
+/* hero */
+
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 32px clamp(24px, 6vw, 72px); align-items: center; padding-block: clamp(32px, 6vw, 72px); }
+
+.kicker { font-size: .82rem; letter-spacing: .14em; color: var(--door-text); font-weight: 700; margin-bottom: 14px; }
+
+h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.9rem, 5.2vw, 3.3rem); line-height: 1.4; letter-spacing: .02em; text-wrap: balance; }
+
+.lead { margin-top: 18px; max-width: 32em; color: var(--muted); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+
+.chips li { font-size: .8rem; padding: 2px 14px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--surface); }
+
+.hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 28px; }
+
+.rating { display: flex; align-items: baseline; gap: 8px; font-size: .85rem; color: var(--muted); }
+
+.rating b { font-family: var(--f-latin); font-style: italic; font-weight: 500; font-size: 2.2rem; line-height: 1; color: var(--ink); }
+
+.door { width: 100%; max-width: 340px; height: auto; display: block; margin-inline: auto; }
+
+.door .wall { fill: var(--wall); }
+
+.door .leaf { fill: var(--door); }
+
+.door .panel { fill: none; stroke: rgba(255, 255, 255, .45); stroke-width: 2; }
+
+.door .frame { fill: none; stroke: var(--ink); stroke-width: 3; opacity: .85; }
+
+.door .knob { fill: var(--awning); }
+
+.door .stripe-a { fill: var(--awning); }
+
+.door .stripe-b { fill: var(--awning-alt); }
+
+.door .plaque { fill: var(--surface); stroke: var(--ink); stroke-width: 1.5; }
+
+.door text { fill: var(--ink); font-family: var(--f-latin); font-style: italic; font-size: 17px; }
+
+.door .step { fill: var(--line); }
+
+ 
+
+/* sections */
+
+.sec { padding-block: clamp(40px, 7vw, 80px); border-top: 1px solid var(--line); }
+
+.sec-grid { display: grid; grid-template-columns: minmax(0, 200px) minmax(0, 1fr); gap: 24px 48px; }
+
+@media (max-width: 760px) { .sec-grid { grid-template-columns: minmax(0, 1fr); } }
+
+h2 { font-family: var(--f-display); font-weight: 700; font-size: 1.55rem; line-height: 1.4; letter-spacing: .04em; }
+
+h2 small { display: block; font-family: var(--f-latin); font-style: italic; font-weight: 500; font-size: 1.15rem; color: var(--door-text); letter-spacing: .02em; margin-bottom: 4px; }
+
+.sec-note { margin-top: 14px; font-size: .84rem; color: var(--muted); line-height: 1.7; }
+
+ 
+
+/* concept */
+
+.eq { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 6px 18px; margin-bottom: 28px; }
+
+.eq > div { text-align: center; }
+
+.eq .w { display: block; font-family: var(--f-latin); font-style: italic; font-weight: 500; font-size: clamp(2.2rem, 7vw, 3.6rem); line-height: 1.1; }
+
+.eq .c { display: block; font-size: .8rem; color: var(--muted); letter-spacing: .12em; }
+
+.eq .op { font-size: 1.6rem; color: var(--door-text); padding-bottom: 1.1em; }
+
+.eq .all .w { color: var(--door-text); }
+
+.points { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 28px 32px; }
+
+.point { min-width: 0; border-top: 1px solid var(--line); padding-top: 14px; }
+
+.point h3 { font-family: var(--f-display); font-size: 1.05rem; line-height: 1.5; margin-bottom: 6px; }
+
+.point p { font-size: .92rem; color: var(--muted); }
+
+ 
+
+/* menu */
+
+.base { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; padding: 14px 18px; background: var(--tint); border: 1px solid var(--line); margin-bottom: 24px; }
+
+.base span { font-size: .9rem; }
+
+.base b { font-family: var(--f-display); font-size: 1.3rem; font-variant-numeric: tabular-nums; }
+
+.menu-group + .menu-group { margin-top: 26px; }
+
+.menu-group h3 { font-size: .8rem; letter-spacing: .2em; color: var(--muted); font-weight: 500; padding-bottom: 6px; border-bottom: 2px solid var(--ink); }
+
+.menu li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--line); }
+
+.menu .name { min-width: 0; }
+
+.menu .tag { display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .06em; padding: 0 8px; margin-right: 8px; border-radius: 2px; background: var(--door); color: var(--on-door); line-height: 1.7; vertical-align: .08em; }
+
+.menu .tag.alt { background: var(--awning); color: #0f1b33; }
+
+.menu .yen { font-family: var(--f-display); font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+ 
+
+/* styles */
+
+.styles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; }
+
+.style { background: var(--surface); border: 1px solid var(--line); padding: 18px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+
+.style .len { font-size: .72rem; letter-spacing: .12em; color: var(--door-text); font-weight: 700; }
+
+.style h3 { font-family: var(--f-display); font-size: 1.05rem; line-height: 1.5; flex: 1; }
+
+.ruler { position: relative; height: 4px; background: var(--line); margin: 14px 4px 4px; }
+
+.ruler i { position: absolute; top: 50%; left: var(--p); width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--door); border: 2px solid var(--surface); }
+
+.ruler-cap { display: flex; justify-content: space-between; font-size: .68rem; color: var(--muted); }
+
+.more { margin-top: 18px; font-size: .9rem; }
+
+.more a { color: var(--door-text); }
+
+ 
+
+/* stylist */
+
+.person { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px 28px; align-items: start; }
+
+.mono { width: 88px; height: 88px; border-radius: 50%; background: var(--door); color: var(--on-door); display: grid; place-items: center; font-family: var(--f-display); font-weight: 700; font-size: 2rem; }
+
+.person h3 { font-family: var(--f-display); font-size: 1.25rem; line-height: 1.4; }
+
+.person .role { font-size: .82rem; color: var(--muted); margin-bottom: 10px; }
+
+.person p + p { margin-top: 10px; }
+
+@media (max-width: 520px) { .person { grid-template-columns: minmax(0, 1fr); } }
+
+ 
+
+/* info */
+
+.info { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 32px; }
+
+dl.rows > div { display: grid; grid-template-columns: 6.4em minmax(0, 1fr); gap: 4px 12px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: .93rem; }
+
+dl.rows dt { color: var(--muted); font-size: .84rem; }
+
+.status { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: .92rem; margin-bottom: 12px; }
+
+.status::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--muted); }
+
+.status[data-state="open"]::before { background: #2da44e; }
+
+.status[data-state="closed"]::before { background: #c9514b; }
+
+.hours { width: 100%; border-collapse: collapse; font-size: .92rem; }
+
+.hours th, .hours td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); font-weight: 400; }
+
+.hours th { width: 8.5em; color: var(--muted); }
+
+.hours tr.today th, .hours tr.today td { background: var(--tint); color: var(--ink); font-weight: 700; box-shadow: inset 3px 0 0 var(--door); }
+
+.hours-note { margin-top: 10px; font-size: .8rem; color: var(--muted); line-height: 1.7; }
+
+.way { font-size: .9rem; color: var(--muted); }
+
+.way a { color: var(--door-text); }
+
+ 
+
+/* reserve band */
+
+.reserve { background: var(--tint); border-top: 1px solid var(--line); padding-block: clamp(36px, 6vw, 60px); }
+
+.reserve .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; }
+
+.reserve h2 { font-size: 1.4rem; }
+
+.reserve h2::before { content: ""; display: block; width: 36px; height: 4px; background: var(--awning); margin-bottom: 12px; }
+
+.reserve p { margin-top: 6px; font-size: .92rem; color: var(--muted); }
+
+ 
+
+.foot { padding-block: 28px 96px; font-size: .78rem; color: var(--muted); }
+
+.foot .wrap { display: grid; gap: 6px; }
+
+ 
+
+.fixed-cta { display: none; }
+
+@media (max-width: 720px) {
+
+  .nav { display: none; } /* 予約ボタンは画面下の固定ボタンに任せ、ヘッダーは1行に収める */
+
+  html { scroll-padding-top: 64px; }
+
+  .fixed-cta { display: block; position: fixed; inset-inline: 0; bottom: 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background: var(--bg); border-top: 1px solid var(--line); z-index: 5; }
+
+  .fixed-cta .btn { display: block; text-align: center; }
+
+}
+
+@media (max-width: 560px) {
+
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+
+  .door { max-width: 240px; }
+
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+</style>
+
+</head>
+
+<body>
+
+ 
+
+<header class="head">
+
+  <div class="wrap">
+
+    <a class="mark" href="#top"><b>Cormarche</b><small>コルマルシェ</small></a>
+
+    <nav class="nav" aria-label="メインメニュー">
+
+      <a href="#concept">コンセプト</a>
+
+      <a href="#menu">メニュー・料金</a>
+
+      <a href="#style">スタイル</a>
+
+      <a href="#stylist">スタイリスト</a>
+
+      <a href="#info">アクセス</a>
+
+      <a class="btn" href=https://beauty.hotpepper.jp/slnH000407072/ target="_blank" rel="noopener">ネット予約</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+ 
+
+<main id="top">
+
+  <section aria-label="ごあいさつ">
+
+    <div class="wrap hero-grid">
+
+      <div>
+
+        <p class="kicker">堺東駅 西口から徒歩5分 ／ 青い扉が目印</p>
+
+        <h1>あなただけの、<br>ひとりぶんの空間。</h1>
+
+        <p class="lead">お一人様ずつの完全プライベートサロンです。ショートカットに定評があり、カットからカラー、仕上げまで、オーナースタイリストがひとりで担当します。</p>
+
+        <ul class="chips" aria-label="サロンの特徴">
+
+          <li>20時まで受付</li>
+
+          <li>個室あり</li>
+
+          <li>ドリンクサービス</li>
+
+          <li>禁煙</li>
+
+          <li>メンズも歓迎</li>
+
+        </ul>
+
+        <div class="hero-cta">
+
+          <a class="btn" href=https://beauty.hotpepper.jp/slnH000407072/ target="_blank" rel="noopener">空席確認・ネット予約</a>
+
+          <div class="rating"><b>5.00</b><span>ホットペッパービューティー<br>口コミ 15件</span></div>
+
+        </div>
+
+      </div>
+
+ 
+
+      <svg class="door" viewBox="0 0 300 400" role="img" aria-label="青い扉と黄色と白のストライプのひさしが目印の店先のイラスト">
+
+        <rect class="wall" x="0" y="0" width="300" height="400" rx="6"/>
+
+        <!-- awning -->
+
+        <g>
+
+          <path class="stripe-a" d="M37.5 40 H75 V96 A18.75 14 0 0 1 37.5 96 Z"/>
+
+          <path class="stripe-b" d="M75 40 H112.5 V96 A18.75 14 0 0 1 75 96 Z"/>
+
+          <path class="stripe-a" d="M112.5 40 H150 V96 A18.75 14 0 0 1 112.5 96 Z"/>
+
+          <path class="stripe-b" d="M150 40 H187.5 V96 A18.75 14 0 0 1 150 96 Z"/>
+
+          <path class="stripe-a" d="M187.5 40 H225 V96 A18.75 14 0 0 1 187.5 96 Z"/>
+
+          <path class="stripe-b" d="M225 40 H262.5 V96 A18.75 14 0 0 1 225 96 Z"/>
+
+        </g>
+
+        <rect class="plaque" x="82" y="120" width="136" height="32" rx="4"/>
+
+        <text x="150" y="142" text-anchor="middle">Cormarche</text>
+
+        <!-- door -->
+
+        <rect class="leaf" x="76" y="168" width="148" height="206" rx="3"/>
+
+        <rect class="frame" x="76" y="168" width="148" height="206" rx="3"/>
+
+        <rect class="panel" x="92" y="184" width="116" height="62" rx="2"/>
+
+        <rect class="panel" x="92" y="262" width="116" height="94" rx="2"/>
+
+        <circle class="knob" cx="196" cy="290" r="7"/>
+
+        <rect class="step" x="60" y="374" width="180" height="10" rx="2"/>
+
+      </svg>
+
+    </div>
+
+  </section>
+
+ 
+
+  <section class="sec" id="concept">
+
+    <div class="wrap sec-grid">
+
+      <div><h2><small>Concept</small>名前に込めた思い</h2></div>
+
+      <div>
+
+        <div class="eq" role="img" aria-label="cor(こころ)と marche(市場)で Cormarche(コルマルシェ)">
+
+          <div><span class="w">cor</span><span class="c">こころ</span></div>
+
+          <div class="op" aria-hidden="true">＋</div>
+
+          <div><span class="w">marche</span><span class="c">市場</span></div>
+
+          <div class="op" aria-hidden="true">＝</div>
+
+          <div class="all"><span class="w">Cormarche</span><span class="c">コルマルシェ</span></div>
+
+        </div>
+
+        <p style="max-width:36em; margin-bottom:32px">技術だけでなく、「こころ」も提供できるサロンでありたい。そんな気持ちから、この名前をつけました。幅広い年代の女性に選ばれているのは、似合わせの技術と、仕上げまで任せられる安心感です。</p>
+
+        <div class="points">
+
+          <div class="point">
+
+            <h3>似合わせの技術</h3>
+
+            <p>骨格や毛流れ、普段のスタイリングまで聞いたうえで、その人に合う形をご提案します。</p>
+
+          </div>
+
+          <div class="point">
+
+            <h3>仕上げまで同じ人が担当</h3>
+
+            <p>カウンセリングから仕上げまで、オーナースタイリストがひとりで対応します。</p>
+
+          </div>
+
+          <div class="point">
+
+            <h3>家で再現しやすいカット</h3>
+
+            <p>朝のセットが楽になるよう、ご自宅での再現性を考えてカットします。</p>
+
+          </div>
+
+          <div class="point">
+
+            <h3>首が楽なシャンプー台</h3>
+
+            <p>プレミアムシートのシャンプー台で、首に負担をかけずにゆったり過ごせます。</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ 
+
+  <section class="sec" id="menu">
+
+    <div class="wrap sec-grid">
+
+      <div>
+
+        <h2><small>Menu</small>メニュー・料金</h2>
+
+        <p class="sec-note">価格は税込です。クーポンは随時入れ替わるため、最新の内容はネット予約ページでご確認ください。</p>
+
+      </div>
+
+      <div>
+
+        <div class="base"><span>カット</span><b>¥4,400〜</b></div>
+
+        <div class="menu">
+
+          <div class="menu-group">
+
+            <h3>はじめての方</h3>
+
+            <ul>
+
+              <li><span class="name"><span class="tag alt">人気No.1</span>カット＋カラー＋トリートメント＋マイクロバブル</span><span class="yen">¥13,200</span></li>
+
+              <li><span class="name"><span class="tag alt">人気No.2</span>カット＋カラー＋マイクロバブル</span><span class="yen">¥11,000</span></li>
+
+              <li><span class="name"><span class="tag">平日限定</span>カット＋カラー＋トリートメント</span><span class="yen">¥12,100</span></li>
+
+              <li><span class="name"><span class="tag">平日限定</span>似合わせカット＋さらつやヘルシーカラー</span><span class="yen">¥11,000</span></li>
+
+              <li><span class="name"><span class="tag">メンズ</span>カット＋ショートスパ＋マイクロバブル</span><span class="yen">¥6,050</span></li>
+
+            </ul>
+
+          </div>
+
+          <div class="menu-group">
+
+            <h3>どなたでも</h3>
+
+            <ul>
+
+              <li><span class="name"><span class="tag">白髪染め</span>似合わせカット＋白髪染め</span><span class="yen">¥11,000</span></li>
+
+              <li><span class="name"><span class="tag">ヘアエステ</span>頭皮と髪のスペシャルヘアエステ＋カット＋ヘルシーカラー＋マイクロバブル</span><span class="yen">¥16,500</span></li>
+
+              <li><span class="name"><span class="tag">メンズ</span>大人男性の身だしなみ　メンズカット＋ショートスパ＋マイクロバブル</span><span class="yen">¥6,600</span></li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ 
+
+  <section class="sec" id="style">
+
+    <div class="wrap sec-grid">
+
+      <div>
+
+        <h2><small>Style</small>得意なスタイル</h2>
+
+        <p class="sec-note">ショートからボブまで。丸いシルエットも、切りっぱなしの外ハネも得意です。</p>
+
+      </div>
+
+      <div>
+
+        <div class="styles">
+
+          <article class="style">
+
+            <span class="len">SHORT</span>
+
+            <h3>カッコカワイイ<br>otonaハンサムショート</h3>
+
+            <div><div class="ruler" style="--p:14%"><i></i></div><div class="ruler-cap"><span>短い</span><span>長い</span></div></div>
+
+          </article>
+
+          <article class="style">
+
+            <span class="len">SHORT BOB</span>
+
+            <h3>キレイめシルエットの<br>大人のショートボブ</h3>
+
+            <div><div class="ruler" style="--p:40%"><i></i></div><div class="ruler-cap"><span>短い</span><span>長い</span></div></div>
+
+          </article>
+
+          <article class="style">
+
+            <span class="len">BOB</span>
+
+            <h3>切りっぱなし<br>大人ボブ 外ハネ</h3>
+
+            <div><div class="ruler" style="--p:62%"><i></i></div><div class="ruler-cap"><span>短い</span><span>長い</span></div></div>
+
+          </article>
+
+        </div>
+
+        <p class="more">スタイルの写真は<a href=https://beauty.hotpepper.jp/slnH000407072/ target="_blank" rel="noopener">ホットペッパービューティー</a>のスタイル一覧からご覧いただけます。</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ 
+
+  <section class="sec" id="stylist">
+
+    <div class="wrap sec-grid">
+
+      <div><h2><small>Stylist</small>スタイリスト</h2></div>
+
+      <div class="person">
+
+        <div class="mono" aria-hidden="true">松</div>
+
+        <div>
+
+          <h3>松原 一成</h3>
+
+          <p class="role">代表・オーナースタイリスト</p>
+
+          <p>髪が整うと、いつもと違う道を歩いてみたくなる。そこで思いがけない出会いがあるかもしれません。美容師は施術をするだけでなく、その人の人生に少しだけ関われる仕事だと考えています。</p>
+
+          <p>ここで綺麗になって、これからの毎日が今より楽しくなりますように。ご来店をお待ちしています。</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ 
+
+  <section class="sec" id="info">
+
+    <div class="wrap sec-grid">
+
+      <div><h2><small>Information</small>アクセス・営業時間</h2></div>
+
+      <div class="info">
+
+        <div>
+
+          <p class="status" id="status" data-state="unknown" aria-live="polite">営業時間は下の表をご覧ください</p>
+
+          <table class="hours">
+
+            <tr data-days="1"><th scope="row">月曜</th><td>定休日</td></tr>
+
+            <tr data-days="2,3,4,5,6"><th scope="row">火〜土曜</th><td>10:00–20:00</td></tr>
+
+            <tr data-days="0"><th scope="row">日曜・祝日</th><td>10:00–18:00</td></tr>
+
+          </table>
+
+          <p class="hours-note">第3火曜日も定休日です。最終受付は閉店の30分前までです。</p>
+
+        </div>
+
+        <dl class="rows">
+
+          <div><dt>住所</dt><dd>大阪府堺市堺区一条通17-22</dd></div>
+
+          <div><dt>最寄り駅</dt><dd>南海高野線 堺東駅 西口より徒歩5分</dd></div>
+
+          <div><dt>席数</dt><dd>セット面3席(スタイリスト1名)</dd></div>
+
+          <div><dt>お支払い</dt><dd>Visa／Mastercard／JCB／American Express／Diners Club／UnionPay／Discover</dd></div>
+
+          <div><dt>その他</dt><dd>ポイント利用OK／即時予約OK／個室あり／ドリンクサービス／禁煙</dd></div>
+
+          <div><dt>道順</dt><dd class="way">堺東駅の西口を出て、商店街が見える13号線(府道30号)を左へ。市役所とジョルノの間を抜けると、コメダ珈琲やローソンが見えます。油そば屋の先、カメラ店の隣にある青い扉が目印です。<br><a href=https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A0%BA%E5%B8%82%E5%A0%BA%E5%8C%BA%E4%B8%80%E6%9D%A1%E9%80%9A17-22 target="_blank" rel="noopener">地図で見る</a></dd></div>
+
+        </dl>
+
+      </div>
+
+    </div>
+
+  </section>
+
+ 
+
+  <section class="reserve" aria-label="ご予約">
+
+    <div class="wrap">
+
+      <div>
+
+        <h2>ご予約はネットで</h2>
+
+        <p>即時予約に対応しています。20時まで受付(最終受付は閉店30分前)。</p>
+
+      </div>
+
+      <a class="btn" href=https://beauty.hotpepper.jp/slnH000407072/ target="_blank" rel="noopener">空席確認・ネット予約</a>
+
+    </div>
+
+  </section>
+
+</main>
+
+ 
+
+<footer class="foot">
+
+  <div class="wrap">
+
+    <p>© Cormarche（コルマルシェ）</p>
+
+    <p>※本ページはホットペッパービューティーの掲載情報をもとにした制作サンプルです。営業時間・料金は変更される場合があります。</p>
+
+  </div>
+
+</footer>
+
+ 
+
+<div class="fixed-cta">
+
+  <a class="btn" href=https://beauty.hotpepper.jp/slnH000407072/ target="_blank" rel="noopener">空席確認・ネット予約</a>
+
+</div>
+
+ 
+
+<script>
+
+(function () {
+
+  var now = new Date();
+
+  var day = now.getDay();
+
+  var date = now.getDate();
+
+  var min = now.getHours() * 60 + now.getMinutes();
+
+ 
+
+  var rows = document.querySelectorAll('.hours tr');
+
+  for (var i = 0; i < rows.length; i++) {
+
+    var days = rows[i].getAttribute('data-days').split(',');
+
+    if (days.indexOf(String(day)) !== -1) rows[i].className = 'today';
+
+  }
+
+ 
+
+  function hhmm(m) {
+
+    var h = Math.floor(m / 60), mm = m % 60;
+
+    return h + ':' + (mm < 10 ? '0' : '') + mm;
+
+  }
+
+ 
+
+  var el = document.getElementById('status');
+
+  var thirdTue = day === 2 && date >= 15 && date <= 21;
+
+  var state, text;
+
+  if (day === 1 || thirdTue) {
+
+    state = 'closed'; text = '本日は定休日です';
+
+  } else {
+
+    var open = 10 * 60;
+
+    var close = (day === 0 ? 18 : 20) * 60;
+
+    var last = close - 30;
+
+    if (min < open) { state = 'closed'; text = '本日は10:00から営業します'; }
+
+    else if (min < last) { state = 'open'; text = '営業中(最終受付 ' + hhmm(last) + ')'; }
+
+    else if (min < close) { state = 'closed'; text = '本日の受付は終了しました'; }
+
+    else { state = 'closed'; text = '本日の営業は終了しました'; }
+
+  }
+
+  el.setAttribute('data-state', state);
+
+  el.textContent = text;
+
+})();
+
+</script>
+
+</body>
+
+</html>
